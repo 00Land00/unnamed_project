@@ -17,7 +17,6 @@ public class Player : MonoBehaviour
 		playerMove = GetComponent<Player_Movement>();
 	}
 
-	// ok things are starting to make sense and i think this is it!!
 	private void OnEnable()
 	{
 		playerActions.Enable();
