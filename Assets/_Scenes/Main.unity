@@ -336,6 +336,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b920863b7eef55d4096cb2f8e22e5260, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player_cursor: {fileID: 1326784816}
+  moveSpeed: 1
+  aimSpeed: 4.62
 --- !u!114 &1324800730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -383,7 +386,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1326784817
 SpriteRenderer:
   m_ObjectHideFlags: 0
