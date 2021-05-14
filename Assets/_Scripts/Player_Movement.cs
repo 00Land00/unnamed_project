@@ -29,6 +29,7 @@ public class Player_Movement : MonoBehaviour
     private void FlipSprite()
 	{
         bool hSpeed = Mathf.Abs(rb2d.velocity.x) > Mathf.Epsilon;
-        if(hSpeed) { transform.localScale = new Vector2(-1 * Mathf.Sign(rb2d.velocity.x), 1f); }
+        // must be the Player_Sprite child
+        if(hSpeed) { transform.GetChild(0).localScale = new Vector2(-1 * Mathf.Sign(rb2d.velocity.x), 1f); }
 	}
 }
