@@ -18,6 +18,6 @@ public class Enemy : MonoBehaviour
 
 	private void FixedUpdate()
 	{
-        enemyMove.Enemy_Move(moveSpeed);
+        enemyMove.Enemy_Move(player, moveSpeed);
 	}
 }

@@ -14,13 +14,21 @@ public class Enemy_Movement : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-    public void Enemy_Move(float moveSpeed)
+    public void Enemy_Move(GameObject player, float moveSpeed)
 	{
-        // get difference, normalize it
-        // apply to velocity
+        Vector2 dir = (player.transform.position - transform.position).normalized;
+        rb2d.velocity = dir * moveSpeed;
 
-        // round the direction to -1, 0, 1
-        // and set the values accordingly in anim
-        // flip the sprites accordingly too!
+        
+
+        bool isMoving = Mathf.Abs(rb2d.velocity.magnitude) > Mathf.Epsilon;
+        anim.SetBool("isMoving", isMoving);
+        if(isMoving)
+		{
+            float velX = Mathf.Round(rb2d.velocity.normalized.x);
+            float velY = Mathf.Round(rb2d.velocity.normalized.y);
+            anim.SetFloat("x", velX);
+            anim.SetFloat("y", velY);
+        }
 	}
 }
