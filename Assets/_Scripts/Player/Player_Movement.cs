@@ -4,17 +4,20 @@ using UnityEngine;
 
 public class Player_Movement : MonoBehaviour
 {
+    private Player_Data playerData;
     private Rigidbody2D rb2d;
     private Animator anim;
     void Start()
     {
+        playerData = GetComponent<Player>().GetPlayerData();
         rb2d = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
     }
 
-	public void Move_Player(Vector2 dir, float moveSpeed)
+    private Vector2 newVel;
+    public void Move_Player(Vector2 dir, float moveSpeed)
 	{
-        Vector2 newVel = dir * moveSpeed;
+        newVel = dir * moveSpeed;
         rb2d.velocity = newVel;
 
         anim.SetBool("isWalking", transform.hasChanged);
